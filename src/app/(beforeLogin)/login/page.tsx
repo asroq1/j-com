@@ -1,8 +1,15 @@
-import { redirect } from 'next/navigation'
-import React from 'react'
+'use client';
 
-const page = () => {
-  redirect('i/flow/login')
-}
+import { useRouter } from 'next/navigation';
 
-export default page
+import Main from '../_component/Main';
+
+const Login = () => {
+    const router = useRouter();
+    router.replace('i/flow/login');
+    <>
+        <Main />
+    </>;
+};
+
+export default Login;
