@@ -1,7 +1,8 @@
+import Home from '@/app/(beforeLogin)/page';
 import React from 'react';
 
-const Tweet = () => {
-    return <div>버튼 클릭</div>;
+const Page = () => {
+    return <Home />;
 };
 
-export default Tweet;
+export default Page;

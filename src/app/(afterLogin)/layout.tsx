@@ -12,15 +12,11 @@ import FollowRecommend from './_component/FollowRecommend';
 // import TrendSection from '@/app/(afterLogin)/_component/TrendSection';
 // import FollowRecommend from '@/app/(afterLogin)/_component/FollowRecommend';
 
-export default function AfterLoginLayout({
-    children,
-}: {
-    children: ReactNode;
-}) {
+type Props = { children: ReactNode; modal: ReactNode };
+export default function AfterLoginLayout({ children, modal }: Props) {
     return (
         <div className={style.container}>
             {/* 왼쪽 메뉴 */}
-
             <header className={style.leftSectionWrapper}>
                 <section className={style.leftSection}>
                     <div className={style.leftSectionFixed}>
@@ -79,6 +75,7 @@ export default function AfterLoginLayout({
                     </section>
                 </div>
             </div>
+            {modal}
         </div>
     );
 }

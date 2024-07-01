@@ -1,11 +1,11 @@
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
 
 type HomelayoutProps = {
-  children: ReactNode
-}
+    children: ReactNode;
+};
 
 const Homelayout = ({ children }: HomelayoutProps) => {
-  return <div>홈 레이아웃{children}</div>
-}
+    return <>{children}</>;
+};
 
-export default Homelayout
+export default Homelayout;
