@@ -3,10 +3,10 @@
 import style from '@/app/(beforeLogin)/_component/signup.module.css';
 import { FormEventHandler } from 'react';
 import BackButton from './BackButton';
-import onSubmit from '../_lib/Signup';
+import onSubmit from '../_lib/signUp';
 import { useFormState, useFormStatus } from 'react-dom';
 
-function showMessage(message: string) {
+function showMessage(message: string | undefined) {
     if (message === 'no_id') return 'no_id 입력해주세요';
     if (message === 'no_name') return 'no_nick 입력해주세요';
     if (message === 'no_password') return 'no_password 입력해주세요';
@@ -103,7 +103,7 @@ export default function SignupModal() {
                                 가입하기
                             </button>
                             <div className={style.error}>
-                                {showMessage(state?.mesaage)}
+                                {showMessage(state?.message)}
                             </div>
                         </div>
                     </form>

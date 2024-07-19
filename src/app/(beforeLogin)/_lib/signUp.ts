@@ -2,8 +2,8 @@
 
 import { redirect } from 'next/navigation';
 
-export default async (prevState: any, formData: FormData) => {
-    let shoudlRedirect = false;
+const signUp = async (prevState: any, formData: FormData) => {
+    let shouldRedirect = false;
     ('use server');
     if (!formData.get('id') || !(formData.get('id') as string)?.trim())
         return { message: '아이디를 입력해주세요' };
@@ -28,9 +28,11 @@ export default async (prevState: any, formData: FormData) => {
         if (response.status === 403)
             return { mesaage: '이미 존재하는 아이디입니다.' };
         console.log(response.status);
-        shoudlRedirect = true;
+        shouldRedirect = true;
     } catch (error) {
         console.error(error);
     }
     redirect('/home');
 };
+
+export default signUp
